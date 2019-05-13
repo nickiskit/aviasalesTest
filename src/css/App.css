@@ -1,4 +1,4 @@
-.menu {
+.filter {
   background-color: #FFFFFF;
   position: relative;
   width:230px;
@@ -8,4 +8,19 @@
   border: 1px white;
   border-radius: 6px;
   box-shadow: 0 0 10px #DBE6EC;
+}
+
+.tickets {
+	position: absolute;
+  top: 50px;
+	left: 50%;
+}
+
+
+p {
+
+}
+
+p:hover {
+  background-color: #F1FCFF; 
 }

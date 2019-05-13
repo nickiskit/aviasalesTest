@@ -3,17 +3,29 @@ import Ticket from './Ticket'
 
 class Tickets extends Component {
 	
+	
+
+ 	
+
 	render() {
 	
 		
 		var temp = sortByKey(this.props.tickets, 'price');
-
-		const ticketsArr = temp.map( (index) =>
+		var st = this.props.stops
+		var value = this.props.value
+		//var t = this.getCurrency(currency)
+		//console.log("From Tickets",value)
+		const ticketsArr = temp.map((index) =>
 		 
-			<div key={index.id}>
-				<Ticket ticket = {index}/>
+	
+		 	    
 
-			</div>)
+		 		<div key={index.id}>
+					<Ticket ticket = {index} stops={st} value = {value}/>
+				</div>
+		
+		 	)
+			
 		
 		return (
 		<div>
@@ -31,7 +43,7 @@ class Tickets extends Component {
 export default Tickets;
 
 function sortByKey(array, key) {
-	{return array.sort(function(a, b) {
+	return array.sort(function(a, b) {
 	        	var x = a[key]; var y = b[key];
 	        	return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-	    	});}}		
+	    	});}		
