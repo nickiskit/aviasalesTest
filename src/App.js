@@ -32,7 +32,7 @@ class App extends PureComponent {
 
     else {
       arr.splice(arr.indexOf(searchValue),1)
-      this.setState({stops: arr })
+      this.setState({stops: {stops:arr} })
     }
 
 
