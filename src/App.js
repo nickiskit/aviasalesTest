@@ -16,7 +16,8 @@ class App extends PureComponent {
   state = {
     currency: ['rub','rub'],
     stops : {stops: [] },
-    value: 1
+    value: 1,
+    checked: {1:false, 2:false, 3:false, 0:false }
   }
 
   
@@ -25,19 +26,31 @@ class App extends PureComponent {
     //console.log("e= ", e.target)
     var searchValue = parseInt(e.target.value)
     var arr = this.state.stops.stops
+    var arr1 = this.state.checked
     if(e.target.checked) {
         arr.push(searchValue)
-        this.setState({stops: {stops:arr} })
+        arr1[searchValue]=true
+        this.setState({stops: {stops:arr}, checked:arr1 })
+
     }
 
     else {
       arr.splice(arr.indexOf(searchValue),1)
-      this.setState({stops: {stops:arr} })
+      arr1[searchValue]=false
+      this.setState({stops: {stops:arr}, checked:arr1 })
     }
 
 
   }
-
+  
+  onlyStop = (e) => {
+    var searchValue = parseInt(e.target.value)
+    var arr = [searchValue]
+    var arr1 = {1:false, 2:false, 3:false, 0:false}
+    arr1[searchValue]=true
+    this.setState({stops: {stops:arr}, checked:arr1 })
+   // console.log(e.target)
+  }
 
  getCurrency = async(e) => {
    // console.log("getCurrency: ", e)
@@ -74,7 +87,7 @@ class App extends PureComponent {
 
       <div>
       <div className="filter">
-      <Filter stops = {stop} currency={this.currencyMas} meth={this.chngStops} meth_two={this.chngCurrency}/>
+      <Filter stops = {stop} checked={this.state.checked} currency={this.currencyMas} meth={this.chngStops} meth_two={this.chngCurrency} meth_three={this.onlyStop}/>
       </div>
       <div className="tickets">
       <Tickets tickets={ticketsArr.tickets} stops={this.state.stops.stops} value={this.state.value} />   
