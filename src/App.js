@@ -17,7 +17,7 @@ class App extends PureComponent {
     currency: ['rub','rub'],
     stops : {stops: [] },
     value: 1,
-    checked: {1:false, 2:false, 3:false, 0:false }
+    checked: {1:false, 2:false, 3:false, 0:false, 4:false }
   }
 
   
@@ -46,7 +46,7 @@ class App extends PureComponent {
   onlyStop = (e) => {
     var searchValue = parseInt(e.target.value)
     var arr = [searchValue]
-    var arr1 = {1:false, 2:false, 3:false, 0:false}
+    var arr1 = {1:false, 2:false, 3:false, 0:false, 4:false}
     arr1[searchValue]=true
     this.setState({stops: {stops:arr}, checked:arr1 })
    // console.log(e.target)
@@ -85,7 +85,7 @@ class App extends PureComponent {
     //console.log(this.state.value)
     return (
 
-      <div>
+      <div className="app">
       <div className="filter">
       <Filter stops = {stop} checked={this.state.checked} currency={this.currencyMas} meth={this.chngStops} meth_two={this.chngCurrency} meth_three={this.onlyStop}/>
       </div>

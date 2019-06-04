@@ -1,6 +1,16 @@
 body {
- 
+  
+
   background-color: #F3F7FA;
+  font-family: "Helvetica";
+  font-family: sans-serif;
  
+}
+
+body img {
+	width: 70px;
+	height: 70px;
+	display:block;
+	margin: 3% auto 0%;
 }
 

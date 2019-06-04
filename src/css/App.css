@@ -1,26 +1,196 @@
+h5 {
+  font-family: "Helvetica";
+  font-family: sans-serif;
+  font-stretch: expanded;
+  text-transform: uppercase;
+  margin-top: 10%;
+  margin-bottom: 3%;
+  margin-left: 5%;
+  clear: both;
+}
+
+.app {
+  width: 1024px;
+  margin:0 auto;
+}
+
 .filter {
   background-color: #FFFFFF;
-  position: relative;
-  width:230px;
-  height:300px;
-  top:150px;
-  left: 100px;
+  width:233px;
+  height:332px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 103px;
   border: 1px white;
   border-radius: 6px;
   box-shadow: 0 0 10px #DBE6EC;
+  clear: none;
 }
 
 .tickets {
 	position: absolute;
-  top: 50px;
-	left: 50%;
+  margin-left: 354px;
 }
 
+
+.ticket {
+  float: left;
+  background-color: #FFFFFF; 
+  width:366px;
+  height:162px;
+  margin-top: 20px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left: 1px solid #DBE6EC;
+  box-shadow: 6px 0 10px #DBE6EC;
+  visibility: visible;
+}
+
+.hideTicket {
+  visibility: hidden;
+}
+
+.hide-block-with-btn {
+  visibility: hidden;
+}
+
+
+.turkair-logo {
+  margin-top: 27px;
+  margin-left: 41px;
+  width:124px;
+  height: 36px;
+}
+.block-with-btn {
+  float: left;
+  background-color: #FFFFFF; 
+  border:  1px  #FFFFFF;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px; 
+  box-shadow: -6px 0 10px #DBE6EC;
+  width:201px;
+  height:162px;
+  margin-top: 20px;
+}
+
+.buy-btn {
+  background-color: #FF6D00;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  border:  1px solid #FF6D00;
+  border-radius: 4px;
+  margin-top: 24px;
+  margin-left: 21px;
+  height: 58px; 
+  width:160px;
+}
+
+.buy-btn:hover {
+  background-color: #FF8124;
+  border:  1px solid #FF8124;
+}
+
+
+.from {
+  float:left;
+  margin-left: 25px;
+  text-align: left;
+}
+
+.to {
+  float: right;
+  text-align: right;
+  margin-right: 25px;
+
+}
+
+.time {
+  font-size: 27px;
+  margin-bottom: 0;
+}
+
+.city-name {
+  font-size: 12px;
+}
+
+.date {
+  font-size: 12px;
+  color: #B9BEC0;
+}
+
+.buttonVis {
+  background-color: #F2FCFF;
+  color: #2196F3 ;
+  visibility: visible;
+  border: none;
+  float: right;
+}
+
+.buttonVis:focus {
+  border:0;
+}
+
+.buttonHid {
+ visibility: hidden;
+}
+
+.button {
+  float: left;
+  /*background-color: #2196F3;*/
+  margin-top: 0%;
+  margin-bottom: 5%;
+  background-color: #FFFFFF;
+  color: #2196F3;
+  border:  1px solid #D2D5D6;
+  width: 68px;
+  height: 40px
+ 
+}
+
+
+.button:hover {
+  background-color: #F2FCFF;
+  border:  1px solid #2196F3;
+ 
+}
+
+
+.button:focus {
+  background-color: #2196F3;
+  border:  1px solid #2196F3;
+  color: white;
+ 
+}
+
+.button.rub {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-left: 5%;
+  
+}
+
+
+.button.eur {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  
+}
+
+.button.usd {
+ 
+}
+
+
+input[type="checkbox"] {
+  cursor: pointer;
+  background-color: blue;
+}
 
 p {
 
 }
 
-p:hover {
-  background-color: #F1FCFF; 
+p:hover  {
+  background-color: #F2FCFF ;
 }
