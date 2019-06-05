@@ -14,12 +14,13 @@ class Tickets extends Component {
 		var st = this.props.stops
 		var value = this.props.value
 		var curr = currency[this.props.currency]
+		var chng = this.props.chng
 		//var t = this.getCurrency(currency)
-		console.log(curr)
+		console.log("from tickets: ", temp[0].price)
 		const ticketsArr = temp.map((index) => 	    
 
 		 		<div key={index.id} >
-					<Ticket ticket = {index} stops={st} value = {value} curr={curr}/>
+					<Ticket ticket = {index} stops={st} curr={curr} value={value} isChng={chng}/>
 				</div>
 		
 		 	)

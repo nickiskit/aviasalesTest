@@ -12,13 +12,18 @@ class Ticket extends Component {
 		var ticket = this.props.ticket
 		var stops = this.props.stops
 		var countStop = retString(ticket.stops)
-		var value
-		if(this.props.value<1)
-			value = Math.round(this.props.value*1000)/1000
-		else
-			value = Math.round(this.props.value*100)/100
+		//console.log("from ticket: ", ticket)
+		//console.log("from ticket: ", ticket.price)
+		if(this.props.isChng) {
+			var value
+			if(this.props.value<1)
+				value = Math.round(this.props.value*1000)/1000
+			else
+				value = Math.round(this.props.value*100)/100
 
-		ticket.price = Math.round(ticket.price*value)
+			ticket.price = Math.round(ticket.price*value)
+			//this.props.meth()
+		}
 		var date = ticket.departure_date.split(".").reverse()
 		var ticket_date
 		ticket_date = new Date(date[0],date[1],date[2])
