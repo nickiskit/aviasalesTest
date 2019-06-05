@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Ticket from './Ticket'
-
+import currency from './curr'
 class Tickets extends Component {
 	
 	
@@ -13,12 +13,13 @@ class Tickets extends Component {
 		var temp = sortByKey(this.props.tickets, 'price');
 		var st = this.props.stops
 		var value = this.props.value
+		var curr = currency[this.props.currency]
 		//var t = this.getCurrency(currency)
-		
+		console.log(curr)
 		const ticketsArr = temp.map((index) => 	    
 
 		 		<div key={index.id} >
-					<Ticket ticket = {index} stops={st} value = {value}/>
+					<Ticket ticket = {index} stops={st} value = {value} curr={curr}/>
 				</div>
 		
 		 	)

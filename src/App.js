@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import './css/App.css';
 import Tickets from './Tickets'
 import ticketsArr from './tickets'
@@ -11,7 +11,7 @@ import stop from './stopsMas'
 
 
 
-class App extends PureComponent {
+class App extends Component {
   
   state = {
     currency: ['rub','rub'],
@@ -28,15 +28,35 @@ class App extends PureComponent {
     var arr = this.state.stops.stops
     var arr1 = this.state.checked
     if(e.target.checked) {
-        arr.push(searchValue)
-        arr1[searchValue]=true
+
+        if(searchValue===4) {
+          arr1= {1:false, 2:false, 3:false, 0:false, 4:true}
+          arr = [0,1,2,3]
+        }
+        else {
+
+          if(arr1[4]) {
+            arr = []
+            arr1[4] = false
+          }
+
+          arr.push(searchValue)
+          arr1[searchValue]=true
+        }
         this.setState({stops: {stops:arr}, checked:arr1 })
 
     }
 
     else {
-      arr.splice(arr.indexOf(searchValue),1)
-      arr1[searchValue]=false
+
+      if(searchValue===4) {
+          arr1= {1:false, 2:false, 3:false, 0:false, 4:false}
+          arr = []
+        }
+      else {
+        arr.splice(arr.indexOf(searchValue),1)
+        arr1[searchValue]=false
+      }
       this.setState({stops: {stops:arr}, checked:arr1 })
     }
 
@@ -82,7 +102,7 @@ class App extends PureComponent {
   
   render() {
     
-    //console.log(this.state.value)
+    console.log(this.state.currency)
     return (
 
       <div className="app">
@@ -90,7 +110,7 @@ class App extends PureComponent {
       <Filter stops = {stop} checked={this.state.checked} currency={this.currencyMas} meth={this.chngStops} meth_two={this.chngCurrency} meth_three={this.onlyStop}/>
       </div>
       <div className="tickets">
-      <Tickets tickets={ticketsArr.tickets} stops={this.state.stops.stops} value={this.state.value} />   
+      <Tickets tickets={ticketsArr.tickets} stops={this.state.stops.stops} value={this.state.value} currency={this.state.currency[1]} />   
       </div>
       </div>    
     );

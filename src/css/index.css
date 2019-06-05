@@ -4,13 +4,15 @@ body {
   background-color: #F3F7FA;
   font-family: "Helvetica";
   font-family: sans-serif;
+
  
 }
 
 body img {
-	width: 70px;
-	height: 70px;
+	width: 62px;
+	height: 62px;
 	display:block;
-	margin: 3% auto 0%;
+	margin: 50px auto 50px;
+	
 }
 

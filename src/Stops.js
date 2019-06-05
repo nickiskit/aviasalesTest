@@ -22,8 +22,9 @@ class Stops extends Component {
 		if (st.id!==4) {
 		return (
 			<div>
-				<p onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}><input type="checkbox" id ={st.id} value={st.id} checked={this.props.checked}  onChange={this.props.stopsMeth}/>{st.id}
-				<button className={this.state.hover ? "buttonVis" : "buttonHid"} value={st.id} onClick={onlyStop}>Only</button></p>
+				<p className = "stops" onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}><input type="checkbox" id ={st.id} value={st.id} checked={this.props.checked}  onChange={this.props.stopsMeth}/>
+				<label htmlFor={st.id}>{st.name}</label>
+				<button className={this.state.hover ? "buttonVis" : "buttonHid"} value={st.id} onClick={onlyStop}>ТОЛЬКО</button></p>
 				
 			</div>
 		);}
@@ -32,7 +33,7 @@ class Stops extends Component {
 			return (
 			<div >
 				
-				<p><input type="checkbox"   id ={st.id} value={st.id} checked={this.props.checked}  onChange={this.props.stopsMeth}/>{st.id}</p>
+				<p className = "stops"><input type="checkbox" id ={st.id} value={st.id} checked={this.props.checked}  onChange={this.props.stopsMeth}/><label htmlFor={st.id}>{st.name}</label></p>
 				
 				
 			</div>
